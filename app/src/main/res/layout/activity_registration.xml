@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".ActivityRegistration">
+
+
+    <EditText
+        android:id="@+id/userNameETRegAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/curve_background"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/text_color" />
+
+
+    <EditText
+        android:id="@+id/mobileNumberETRegAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/curve_background"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Mobile Number"
+        android:inputType="number"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/text_color" />
+
+
+    <EditText
+        android:id="@+id/emailETRegAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/curve_background"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="E-Mail"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/text_color" />
+
+    <EditText
+        android:id="@+id/dobETRegAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/curve_background"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="DD/MM/YYYY"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/text_color" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="Gender"
+        android:textColor="@color/text_color"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/genderRGRegAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/maleId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:id="@+id/femaleId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textColor="@color/text_color" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/passwordETRegAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/curve_background"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/text_color"
+
+        />
+
+    <EditText
+        android:id="@+id/confirmPasswordETRegAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/curve_background"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/text_color"
+
+        />
+
+    <Button
+        android:id="@+id/registerBTNRegAct"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Sign UP"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/goForSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Already have an account? Login Now!"
+        android:textColor="@color/text_color"
+
+        />
+
+
+</LinearLayout>

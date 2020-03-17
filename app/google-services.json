@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "830108747533",
+    "firebase_url": "https://make-decision-32e65.firebaseio.com",
+    "project_id": "make-decision-32e65",
+    "storage_bucket": "make-decision-32e65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830108747533:android:4358aed78551ec9ec25244",
+        "android_client_info": {
+          "package_name": "bd.com.nabdroid.makedecision"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830108747533-l79quv2tt7v82m7rutq00d17pne4thcs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bd.com.nabdroid.makedecision",
+            "certificate_hash": "15f2447120a153efeafd51acc67f8ed7613726df"
+          }
+        },
+        {
+          "client_id": "830108747533-llt0oaiahuhm4ankmdi5udq2q2o84j29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjQo_ad9B4ND0nP5Dgqfl25TUtG5jmOGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830108747533-llt0oaiahuhm4ankmdi5udq2q2o84j29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
