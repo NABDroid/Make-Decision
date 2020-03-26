@@ -67,7 +67,7 @@ public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHold
         topic = vote.getTopic();
         creatorId = vote.getCreatorId();
         creatorName = vote.getCreatorName();
-        endTime = vote.getEndtimeString();
+        endTime = "Ending on: "+vote.getEndtimeString()+"";
         yesVote = vote.getYesVote();
         noVote = vote.getNoVote();
 

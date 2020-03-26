@@ -153,8 +153,8 @@ public class HomeFragment extends Fragment {
     private void publishResult(Vote vote) {
         DatabaseReference resultRef = databaseReference.child("Results").child(Integer.toString(vote.getVoteCode()));
         resultRef.setValue(vote);
-
-
+        DatabaseReference writeOnCreatorTimeline = databaseReference.child("UserInfo").child(vote.getCreatorId()).child("myVotes").child(Integer.toString(vote.getVoteCode()));
+        writeOnCreatorTimeline.setValue(vote);
     }
 
     //initialize declared elements
@@ -177,8 +177,8 @@ public class HomeFragment extends Fragment {
     //get data from firebase
     private void getActiveVotes() {
 
-        DatabaseReference activVoteRef = databaseReference.child("Votes");
-        activVoteRef.addValueEventListener(new ValueEventListener() {
+        DatabaseReference activeVoteRef = databaseReference.child("Votes");
+        activeVoteRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 votes.clear();

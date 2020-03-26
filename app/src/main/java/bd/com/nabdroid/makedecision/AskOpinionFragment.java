@@ -3,7 +3,6 @@ package bd.com.nabdroid.makedecision;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -38,7 +37,7 @@ public class AskOpinionFragment extends Fragment {
     private Button startVoteBTN;
     private TextView pickDateTV, pickTimeTV;
     private CheckBox checkBoxForNotification;
-    private String voteTopic, creatorName, creatorId, endtimeString;
+    private String voteTopic, creatorName, creatorId, endTimeString;
     private long timeFromDatePicker, timeFromTimePicker;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
@@ -134,7 +133,7 @@ public class AskOpinionFragment extends Fragment {
                 try {
                     date = simpleDateFormat.parse(timeString);
                     timeFromTimePicker = date.getTime();
-                    pickTimeTV.setText(date.toString() + "///" + Long.toString(timeFromTimePicker));
+                    pickTimeTV.setText(date.toString() + "///" + timeFromTimePicker);
 
 
                 } catch (Exception e) {
@@ -168,7 +167,7 @@ public class AskOpinionFragment extends Fragment {
                 try {
                     date = simpleDateFormat.parse(dateString);
                     timeFromDatePicker = date.getTime();
-                    pickDateTV.setText(date.toString() + "///" + Long.toString(timeFromDatePicker));
+                    pickDateTV.setText(date.toString() + "///" + timeFromDatePicker);
 
 
                 } catch (Exception e) {
@@ -199,7 +198,7 @@ public class AskOpinionFragment extends Fragment {
     //-------------------------------------------------------------------------------------------------------------------------------------------------------
 
     private void getUniqueVoteId() {
-        final int idForNewVote[] = new int[1];
+        final int[] idForNewVote = new int[1];
         final DatabaseReference totalVoteRef = databaseReference.child("TotalVotes");
         totalVoteRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -221,8 +220,8 @@ public class AskOpinionFragment extends Fragment {
     private void postVote(int i) {
         final long endTime = timeFromDatePicker + timeFromTimePicker;
         final int idForNewVote = i;
-        endtimeString = "Ending on: "+dateString+" "+timeString+"";
-        Vote vote = new Vote(idForNewVote, voteTopic, creatorId, creatorName, endTime, 0, 0, endtimeString);
+        endTimeString = ""+dateString+" "+timeString+"";
+        Vote vote = new Vote(idForNewVote, voteTopic, creatorId, creatorName, endTime, 0, 0, endTimeString);
 
         DatabaseReference userRef = databaseReference.child("Votes").child(String.valueOf(idForNewVote));
         userRef.setValue(vote).addOnCompleteListener(new OnCompleteListener<Void>() {

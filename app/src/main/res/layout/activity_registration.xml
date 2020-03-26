@@ -16,11 +16,11 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/curve_background"
         android:drawablePadding="12dp"
-        android:ems="10"
         android:hint="Full Name"
         android:inputType="text"
         android:maxLines="1"
-        android:padding="8dp"
+        android:textSize="16sp"
+        android:padding="10dp"
         android:textColor="@color/text_color" />
 
 
@@ -31,11 +31,11 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/curve_background"
         android:drawablePadding="12dp"
-        android:ems="10"
         android:hint="Mobile Number"
         android:inputType="number"
         android:maxLines="1"
-        android:padding="8dp"
+        android:textSize="16sp"
+        android:padding="10dp"
         android:textColor="@color/text_color" />
 
 
@@ -46,11 +46,11 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/curve_background"
         android:drawablePadding="12dp"
-        android:ems="10"
         android:hint="E-Mail"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:padding="8dp"
+        android:textSize="16sp"
+        android:padding="10dp"
         android:textColor="@color/text_color" />
 
     <EditText
@@ -60,21 +60,21 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/curve_background"
         android:drawablePadding="12dp"
-        android:ems="10"
         android:hint="DD/MM/YYYY"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:padding="8dp"
+        android:textSize="16sp"
+        android:padding="10dp"
         android:textColor="@color/text_color" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:padding="8dp"
+        android:padding="4dp"
         android:text="Gender"
         android:textColor="@color/text_color"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <RadioGroup
         android:id="@+id/genderRGRegAct"
@@ -86,6 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Male"
+            android:textSize="16sp"
+            android:allowUndo="true"
             android:textColor="@color/text_color" />
 
         <RadioButton
@@ -93,6 +95,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female"
+            android:textSize="16sp"
+            android:allowUndo="true"
             android:textColor="@color/text_color" />
     </RadioGroup>
 
@@ -103,11 +107,11 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/curve_background"
         android:drawablePadding="12dp"
-        android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:maxLines="1"
-        android:padding="8dp"
+        android:textSize="16sp"
+        android:padding="10dp"
         android:textColor="@color/text_color"
 
         />
@@ -119,11 +123,11 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/curve_background"
         android:drawablePadding="12dp"
-        android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:maxLines="1"
-        android:padding="8dp"
+        android:textSize="16sp"
+        android:padding="10dp"
         android:textColor="@color/text_color"
 
         />
@@ -133,11 +137,11 @@
         style="@style/Base.TextAppearance.AppCompat.Body1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/button_background"
         android:clickable="true"
         android:padding="16dp"
-        android:text="Sign UP"
+        android:text="Sign Up"
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="18sp" />
@@ -150,6 +154,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Already have an account? Login Now!"
+        android:textSize="16sp"
         android:textColor="@color/text_color"
 
         />

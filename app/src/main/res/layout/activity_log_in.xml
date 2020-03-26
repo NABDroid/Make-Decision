@@ -20,8 +20,8 @@
         android:id="@+id/emailETLI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:hint="Email"
+        android:drawablePadding="12dp"
         android:background="@drawable/curve_background"
         android:padding="10dp"
         android:textColor="@color/text_color"
@@ -31,8 +31,9 @@
         android:id="@+id/passwordETLI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginTop="4dp"
         android:hint="Password"
+        android:drawablePadding="12dp"
         android:background="@drawable/curve_background"
         android:padding="10dp"
         android:inputType="textPassword"
@@ -44,11 +45,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign In"
-        android:layout_margin="5dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/button_background"
         android:textAllCaps="false"
+        android:padding="16dp"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
 
 
