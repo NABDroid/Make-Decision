@@ -5,74 +5,70 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 
+import com.gauravk.bubblenavigation.BubbleNavigationLinearView;
+import com.gauravk.bubblenavigation.listener.BubbleNavigationChangeListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    private ViewPager viewP;
+    private SliderAdapter adapter;
+    private BubbleNavigationLinearView bubbleNavigationLinearView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addFragment(new HomeFragment());
-        BottomNavigationView navView = findViewById(R.id.bottomNav);
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        init();
 
+        /*bubbleNavigationLinearView.setTypeface(Typeface.createFromAsset(getAssets(),"rubik.ttf"));*/
+        viewP.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    }
-
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.home_nav:
-                    replaceFragment(new HomeFragment());
-                    return true;
-
-
-                case R.id.history_nav:
-                    replaceFragment(new ResultFragment());
-                    return true;
-
-
-                case R.id.post_nav:
-                    replaceFragment(new AskOpinionFragment());
-                    return true;
-
-
-                case R.id.groups_nav:
-                    Toast.makeText(MainActivity.this, "Groups", Toast.LENGTH_SHORT).show();
-                    return true;
-
-                case R.id.profile_nav:
-                    Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
-                    return true;
             }
-            return false;
-        }
-    };
 
+            @Override
+            public void onPageSelected(int i) {
+                bubbleNavigationLinearView.setCurrentActiveItem(i);
+            }
 
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.mainFrameLayout, fragment);
-        ft.commit();
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        bubbleNavigationLinearView.setNavigationChangeListener(new BubbleNavigationChangeListener() {
+            @Override
+            public void onNavigationChanged(View view, int position) {
+                viewP.setCurrentItem(position,true);
+            }
+        });
+
     }
 
+    private void init() {
+        List<Fragment> list = new ArrayList<>();
+        list.add(new HomeFragment());
+        list.add(new ResultFragment());
+        list.add(new AskOpinionFragment());
+        /*list.add(new Groups());
+        list.add(new Profile());*/
+        viewP = findViewById(R.id.pager);
+        adapter =new SliderAdapter(getSupportFragmentManager(),list);
+        viewP.setAdapter(adapter);
+        bubbleNavigationLinearView = findViewById(R.id.bubble_nav_bar);
 
-    private void addFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.mainFrameLayout, fragment);
-        ft.commit();
     }
 
 

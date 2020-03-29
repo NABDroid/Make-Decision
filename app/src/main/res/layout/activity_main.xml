@@ -7,18 +7,102 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/mainFrameLayout"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-    </FrameLayout>
+        android:layout_weight="1"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
+    <com.gauravk.bubblenavigation.BubbleNavigationLinearView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/bubble_nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemIconTint="@color/text_color"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_nav_menu"/>
+        android:layout_gravity="center"
+        android:background="#333366"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#fff"
+            app:bt_colorInactive="#fff"
+            app:bt_icon="@drawable/ic_home_black_24dp"
+            app:bt_shape="@drawable/circle_bottom_nav_btn"
+            app:bt_iconHeight="32dp"
+            app:bt_iconWidth="32dp"
+            app:bt_title="@string/home"
+            app:bt_padding="8dp"
+            app:bt_titlePadding="8dp"
+            />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#fff"
+            app:bt_colorInactive="#fff"
+            app:bt_icon="@drawable/ic_av_result_black_24dp"
+            app:bt_iconHeight="32dp"
+            app:bt_iconWidth="32dp"
+            app:bt_shape="@drawable/circle_bottom_nav_btn"
+            app:bt_title="@string/result"
+            app:bt_padding="8dp"
+            app:bt_titlePadding="8dp"
+            />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_new_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#fff"
+            app:bt_colorInactive="#fff"
+            app:bt_icon="@drawable/ic_add_circle_outline_black_24dp"
+            app:bt_iconHeight="32dp"
+            app:bt_iconWidth="32dp"
+            app:bt_shape="@drawable/circle_bottom_nav_btn"
+            app:bt_title="@string/add_post"
+            app:bt_padding="8dp"
+            app:bt_titlePadding="8dp"
+            />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_groups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#fff"
+            app:bt_colorInactive="#fff"
+            app:bt_icon="@drawable/ic_group_black_24dp"
+            app:bt_iconHeight="32dp"
+            app:bt_iconWidth="32dp"
+            app:bt_shape="@drawable/circle_bottom_nav_btn"
+            app:bt_title="@string/groups"
+            app:bt_padding="8dp"
+            app:bt_titlePadding="8dp"
+            />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#fff"
+            app:bt_colorInactive="#fff"
+            app:bt_icon="@drawable/ic_person_black_24dp"
+            app:bt_iconHeight="32dp"
+            app:bt_iconWidth="32dp"
+            app:bt_shape="@drawable/circle_bottom_nav_btn"
+            app:bt_title="@string/profile"
+            app:bt_padding="8dp"
+            app:bt_titlePadding="8dp"
+            />
+
+    </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
+
 </LinearLayout>
