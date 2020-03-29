@@ -68,7 +68,7 @@ public class AdapterForResult extends RecyclerView.Adapter<AdapterForResult.View
         private TextView creatorNameTV, topicTV, resultSummaryTV, peopleCountTV;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            creatorNameTV = itemView.findViewById(R.id.userNameSRTV);
+            creatorNameTV = itemView.findViewById(R.id.userNameTVHAUI);
             topicTV = itemView.findViewById(R.id.topicSRTV);
             resultSummaryTV = itemView.findViewById(R.id.resultSummerySRTV);
             peopleCountTV = itemView.findViewById(R.id.peopleCountSRTV);
