@@ -21,14 +21,19 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
 
-                <ImageView
+                <LinearLayout
+                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight=".5"
-                    android:background="@drawable/acc_icon"
-                    android:backgroundTint="#817676"
-                    android:padding="30dp" />
+                    android:layout_weight=".5">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/acc_icon"
+                        android:backgroundTint="#817676"
+                        android:padding="30dp" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -37,7 +42,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/userNameSRTV"
+                        android:id="@+id/userNameTVHAUI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
@@ -47,7 +52,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/endTimeSRTV"
+                        android:id="@+id/lifetimeTVHAUI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="14dp"
@@ -59,7 +64,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/voteCodeSRTV"
+                    android:id="@+id/titleTVHAUI"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="end"
