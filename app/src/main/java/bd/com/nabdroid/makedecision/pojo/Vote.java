@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.pojo;
 
 public class Vote {
     private String topic, creatorId, creatorName, endtimeString;

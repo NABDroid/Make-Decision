@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.pojo.UserProfile;
 
 public class ActivityRegistration extends AppCompatActivity {
     private EditText userNameET, mobileNumberET, emailET, dateOfBirthET, passwordET, confirmPasswordET;
@@ -63,7 +66,7 @@ public class ActivityRegistration extends AppCompatActivity {
     //init fields
     private void init() {
         genderRG = findViewById(R.id.genderRGRegAct);
-        userNameET = findViewById(R.id.userNameETRegAct);
+        userNameET = findViewById(R.id.firstNameETRegAct);
         mobileNumberET = findViewById(R.id.mobileNumberETRegAct);
         goForSignUp = findViewById(R.id.goForSignUp);
         emailET = findViewById(R.id.emailETRegAct);

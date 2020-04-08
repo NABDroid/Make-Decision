@@ -1,15 +1,15 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.adaptar;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,7 +23,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+import bd.com.nabdroid.makedecision.pojo.Comment;
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.pojo.Vote;
+import bd.com.nabdroid.makedecision.pojo.VoteTime;
 
 public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHolder> {
 
@@ -52,14 +60,10 @@ public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHold
 
         //variables
         final String topic, creatorId, creatorName, endTime;
-        final int  yesVote, noVote;
+        final int yesVote, noVote;
         final int uniqueCode;
 
-
-        //collecting commentWritenName
         collectCommentWriterName();
-        //name collected
-
 
         //collecting form HomeActivity
         final Vote vote = votes.get(position);
@@ -67,10 +71,9 @@ public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHold
         topic = vote.getTopic();
         creatorId = vote.getCreatorId();
         creatorName = vote.getCreatorName();
-        endTime = "Ending on: "+vote.getEndtimeString()+"";
+        endTime = "Ending on: " + vote.getEndtimeString() + "";
         yesVote = vote.getYesVote();
         noVote = vote.getNoVote();
-
 
         //showing data to List
         holder.userNameTV.setText(creatorName);
@@ -80,7 +83,6 @@ public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHold
         String agreedVote = Integer.toString(vote.getYesVote());
         String disagreedVote = Integer.toString(vote.getNoVote());
         holder.voteCountTV.setText(agreedVote + " people agreed with you and " + disagreedVote + " people disagreed with you!");
-
 
         //sending vote and comment data to db
         holder.submitBTN.setOnClickListener(new View.OnClickListener() {
@@ -109,9 +111,7 @@ public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHold
                             String comment = holder.commentET.getText().toString().trim();
                             String creationTime = "Time Unknown";
 
-
                             Comment commentObj = new Comment(commentWriterName, creatorId, commentFor, comment, creationTime);
-
 
                             //pushing comment into database
                             DatabaseReference commentRef = databaseReference.child("Comment").child(Integer.toString(uniqueCode)).child(currentUserId);
@@ -134,45 +134,63 @@ public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHold
                             String disagreedVote = Integer.toString(vote.getNoVote());
                             holder.voteCountTV.setText(agreedVote + " people agreed with you and " + disagreedVote + " people disagreed with you!");
 
-
                             //collecting comment and necessary data for comment
                             String currentUserId = firebaseAuth.getCurrentUser().getUid();
                             String commentFor = "For No";
                             String comment = holder.commentET.getText().toString().trim();
                             String creationTime = "Time Unknown";
 
-
                             Comment commentObj = new Comment(commentWriterName, creatorId, commentFor, comment, creationTime);
-
 
                             //pushing comment into database
                             DatabaseReference commentRef = databaseReference.child("Comment").child(Integer.toString(uniqueCode)).child(currentUserId);
                             commentRef.setValue(commentObj);
 
-
-
                         }
                     });
                 }
-
-
-                if (votes != null && votes.size() > 0) {
-                    votes.clear();
-                }
-
-
                 //hiding buttons and comment box
-                holder.radioGroup.setVisibility(View.GONE);
-                holder.commentET.setVisibility(View.GONE);
-                holder.submitBTN.setVisibility(View.GONE);
+                holder.votingMechanismLL.setVisibility(View.GONE);
+
+                addToGivenVote(uniqueCode);
 
             }
 
 
+
         });
-
-
     }
+
+
+
+    @Override
+    public int getItemCount() {
+        return votes.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView userNameTV, titleTV, topicTV, voteCountTV, lifetimeTV;
+        private EditText commentET;
+        private ImageView submitBTN;
+        private RadioGroup radioGroup;
+        private LinearLayout votingMechanismLL;
+
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            userNameTV = itemView.findViewById(R.id.userNameTVHAUI);
+            titleTV = itemView.findViewById(R.id.titleTVHAUI);
+            topicTV = itemView.findViewById(R.id.topicTVHAUI);
+            lifetimeTV = itemView.findViewById(R.id.lifetimeTVHAUI);
+            commentET = itemView.findViewById(R.id.commentETHAUI);
+            submitBTN = itemView.findViewById(R.id.submitVoteBTNHAUI);
+            radioGroup = itemView.findViewById(R.id.radioGRPHAUI);
+            voteCountTV = itemView.findViewById(R.id.voteCountTVHAUI);
+            votingMechanismLL = itemView.findViewById(R.id.votingMechanismLL);
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------
 
     private void collectCommentWriterName() {
         final DatabaseReference userInfoRef = databaseReference.child("UserInfo").child(currentUserId);
@@ -189,33 +207,11 @@ public class AdapertForHome extends RecyclerView.Adapter<AdapertForHome.ViewHold
         });
     }
 
-
-    @Override
-    public int getItemCount() {
-        return votes.size();
+    private void addToGivenVote(int uniqueCode) {
+        DatabaseReference userInfoRef = databaseReference.child("UserInfo").child(currentUserId).child("submittedVotes").child(Integer.toString(uniqueCode));
+        userInfoRef.setValue(1);
     }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView userNameTV, titleTV, topicTV, voteCountTV, lifetimeTV;
-        private EditText commentET;
-        private Button submitBTN;
-        private RadioGroup radioGroup;
-        private ImageView commentIV;
-
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            userNameTV = itemView.findViewById(R.id.userNameTVHAUI);
-            titleTV = itemView.findViewById(R.id.titleTVHAUI);
-            topicTV = itemView.findViewById(R.id.topicTVHAUI);
-            lifetimeTV = itemView.findViewById(R.id.lifetimeTVHAUI);
-            commentET = itemView.findViewById(R.id.commentETHAUI);
-            submitBTN = itemView.findViewById(R.id.submitVoteBTNHAUI);
-            radioGroup = itemView.findViewById(R.id.radioGRPHAUI);
-            voteCountTV = itemView.findViewById(R.id.voteCountTVHAUI);
-            commentIV = itemView.findViewById(R.id.commentIVHAUI);
-        }
-    }
+    //-------------------------------------------------------------------------------------------------------------------
 
 
 }

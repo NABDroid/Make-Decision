@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.pojo;
 
 public class UserProfile {
     String userName, mobileNumber, email, dateOfBirth, gender ,password;

@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.fragment;
 
 
 import android.content.Context;
@@ -13,10 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +24,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.pojo.Vote;
+import bd.com.nabdroid.makedecision.activity.ActivityLogIn;
+import bd.com.nabdroid.makedecision.adaptar.AdaptarForUserHistory;
 
 
 public class ProfileFragment extends Fragment {

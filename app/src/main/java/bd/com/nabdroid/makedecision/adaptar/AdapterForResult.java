@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.adaptar;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.pojo.Vote;
 
 public class AdapterForResult extends RecyclerView.Adapter<AdapterForResult.ViewHolder> {
     private ArrayList<Vote> votes;

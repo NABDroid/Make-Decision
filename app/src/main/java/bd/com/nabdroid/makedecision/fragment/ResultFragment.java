@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.fragment;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.pojo.Vote;
+import bd.com.nabdroid.makedecision.adaptar.AdapterForResult;
 
 public class ResultFragment extends Fragment {
     private RecyclerView resultRecyclerView;

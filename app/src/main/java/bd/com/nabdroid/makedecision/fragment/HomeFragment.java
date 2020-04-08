@@ -1,7 +1,6 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.fragment;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,6 +27,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.pojo.Vote;
+import bd.com.nabdroid.makedecision.pojo.VoteTime;
+import bd.com.nabdroid.makedecision.adaptar.AdapertForHome;
 
 
 public class HomeFragment extends Fragment {
@@ -61,7 +65,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    //-------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------
     private void findExpiredVote() {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -149,7 +153,7 @@ public class HomeFragment extends Fragment {
             }
         });
     }
-
+//-------------------------------------------------------------------------------------------------------------------
     private void publishResult(Vote vote) {
         DatabaseReference resultRef = databaseReference.child("Results").child(Integer.toString(vote.getVoteCode()));
         resultRef.setValue(vote);

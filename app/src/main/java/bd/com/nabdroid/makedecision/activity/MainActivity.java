@@ -1,21 +1,34 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.activity;
 
+import androidx.annotation.Dimension;
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
+import androidx.annotation.StyleableRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.resources.TextAppearanceConfig;
+
+import bd.com.nabdroid.makedecision.fragment.AskOpinionFragment;
+import bd.com.nabdroid.makedecision.fragment.HomeFragment;
+import bd.com.nabdroid.makedecision.fragment.ProfileFragment;
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.fragment.ResultFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private ColorStateList colorStateList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         addFragment(new HomeFragment());
         BottomNavigationView navView = findViewById(R.id.bottomNav);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
 
 
     }
@@ -49,10 +63,6 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new AskOpinionFragment());
                     return true;
 
-
-                case R.id.groups_nav:
-                    Toast.makeText(MainActivity.this, "Groups", Toast.LENGTH_SHORT).show();
-                    return true;
 
                 case R.id.profile_nav:
                     replaceFragment(new ProfileFragment(MainActivity.this));

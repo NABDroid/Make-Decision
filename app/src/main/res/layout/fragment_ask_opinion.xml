@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AskOpinionFragment">
+    tools:context=".fragment.AskOpinionFragment">
 
 
 
@@ -32,7 +32,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="8dp"
-            android:background="@drawable/curve_background"
+            android:background="@drawable/curve_background_2"
             android:ellipsize="start"
             android:padding="10dp"
             android:hint="Type Topic"
@@ -92,7 +92,7 @@
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:text="9 Jan, 2020"
-                android:background="@drawable/curve_background"
+                android:background="@drawable/curve_background_2"
                 android:textColor="@color/text_color" />
 
 
@@ -108,7 +108,7 @@
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:text="12 : 00 PM"
-                android:background="@drawable/curve_background"
+                android:background="@drawable/curve_background_2"
                 android:textColor="@color/text_color" />
 
 
@@ -128,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/button_background_2"
             android:text="Create and Start"
             android:textAlignment="center"
             android:textAllCaps="false"

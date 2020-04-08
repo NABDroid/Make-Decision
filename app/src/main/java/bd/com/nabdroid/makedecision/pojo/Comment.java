@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.pojo;
 
 public class Comment {
     String  commentWritterName, postId, commentFor, comment, createTime;

@@ -8,18 +8,14 @@
 
     <item
         android:id="@+id/history_nav"
-        android:icon="@drawable/history"
+        android:icon="@drawable/ic_history"
         android:title="Result"/>
 
     <item
         android:id="@+id/post_nav"
-        android:icon="@drawable/post"
+        android:icon="@drawable/ic_plus"
         android:title="Post"/>
 
-    <item
-        android:id="@+id/groups_nav"
-        android:icon="@drawable/group"
-        android:title="Group"/>
 
     <item
         android:id="@+id/profile_nav"

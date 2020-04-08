@@ -6,63 +6,80 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".ActivityLogIn">
+    tools:context=".activity.ActivityLogIn"
+    android:background="@drawable/login_registration_background">
 
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_margin="40dp"
-        android:src="@drawable/chip"/>
-
-    <EditText
-        android:id="@+id/emailETLI"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:drawablePadding="12dp"
-        android:background="@drawable/curve_background"
-        android:padding="10dp"
-        android:textColor="@color/text_color"
-        android:textSize="16sp" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="100dp">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="40dp"
+                android:src="@drawable/chip"/>
 
-    <EditText
-        android:id="@+id/passwordETLI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="Password"
-        android:drawablePadding="12dp"
-        android:background="@drawable/curve_background"
-        android:padding="10dp"
-        android:inputType="textPassword"
-        android:textColor="@color/text_color"
-        android:textSize="16sp" />
+            <EditText
+                android:id="@+id/emailETLI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="E-Mail"
+                android:drawableLeft="@drawable/email"
+                android:background="@drawable/curve_background"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/loginBTNLI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/button_background"
-        android:textAllCaps="false"
-        android:padding="16dp"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+            <EditText
+                android:id="@+id/passwordETLI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Password"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@drawable/key"
+                android:drawablePadding="5dp"
+                android:background="@drawable/curve_background"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
 
+            <Button
+                android:id="@+id/loginBTNLI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/button_background"
+                android:textAllCaps="false"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-
-    <TextView
-        android:id="@+id/goForSignUpBTNLI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New user? Register here!"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:textColor="@color/text_color"
-        android:textSize="16sp" />
+            <TextView
+                android:id="@+id/goForSignUpBTNLI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New user? Register here!"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

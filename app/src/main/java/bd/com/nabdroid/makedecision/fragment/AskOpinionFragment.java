@@ -1,4 +1,4 @@
-package bd.com.nabdroid.makedecision;
+package bd.com.nabdroid.makedecision.fragment;
 
 
 import android.app.DatePickerDialog;
@@ -31,6 +31,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import bd.com.nabdroid.makedecision.R;
+import bd.com.nabdroid.makedecision.pojo.Vote;
+import bd.com.nabdroid.makedecision.pojo.VoteTime;
 
 public class AskOpinionFragment extends Fragment {
     private EditText voteTopicET;
