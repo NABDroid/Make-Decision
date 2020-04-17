@@ -30,10 +30,10 @@
                     android:src="@drawable/cover_photo" />
                 <ImageView
                     android:id="@+id/logOutIV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/more_horiz_white"
+                    android:src="@drawable/ic_exit"
                     android:layout_alignParentRight="true"
                     android:layout_margin="10dp"/>
 

@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         addFragment(new HomeFragment());
         BottomNavigationView navView = findViewById(R.id.bottomNav);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
-
     }
 
 
